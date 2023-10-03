@@ -1,0 +1,164 @@
+:root{
+    --Orange: hsl(25, 97%, 53%);
+
+    --White: hsl(0, 0%, 100%);
+    --LightGrey: hsl(217, 12%, 63%);
+    --MediumGrey: hsl(216, 12%, 24%); /*I changed the last percentage because it was wrong*/
+    --DarkBlue: hsl(213, 19%, 18%);
+    --VeryDarkBlue: hsl(216, 12%, 8%);
+    --MediumGreyActive: hsl(216, 12%, 54%); /*Maybe it was right, but only for the active state*/
+}
+
+
+*,*::after, *::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Overpass";
+    
+    font-weight: 400;
+}
+
+
+body{
+    display:grid;
+    place-content: center;
+    height: 100vh;
+    background-color: var(--VeryDarkBlue);
+    color:var(--LightGrey);
+    font-size: 15px;
+}
+
+
+.how-did-we-do{
+    display:grid;   
+    gap: 1.75rem;
+    background-color: var(--DarkBlue);
+    max-width: 27rem;
+    border-radius: 2rem;
+    padding: 2.5rem;
+    margin-inline: 1.5rem;
+}
+
+
+.circle{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--MediumGrey);
+    width: 3.5rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    
+}
+
+.text{
+    display:grid;
+    gap: .75rem;
+    line-height: 1.5;
+}
+
+
+h1{
+    font-size: 2rem;
+    color: var(--White);    
+    
+}
+
+.options{
+    display:flex;
+    justify-content: space-between;
+}
+
+.button_circles{
+    display:grid;
+    place-content: center;
+    width: 3.5rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border:none;
+    font-weight: 700;
+    cursor:pointer; 
+    background-color: var(--MediumGrey);
+    color: var(--LightGrey);
+}
+
+.button_circles:hover{
+    background-color: var(--MediumGreyActive);
+    color: var(--White);
+}
+
+
+.button_circles:focus{
+    background-color: var(--Orange);
+    color: var(--White);
+}
+
+
+.submit{
+    background-color: var(--Orange);
+    color: var(--White);
+    border: none;
+    border-radius: 2rem;
+    padding: .8rem;
+    cursor:pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.submit:hover{
+    background-color:var(--White);
+    color: var(--Orange);
+}
+
+
+.thank-you-state{
+    display:none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.75rem;
+    background-color: var(--DarkBlue);
+    max-width: 26rem;
+    border-radius: 2rem;
+    padding: 3rem 2.5rem;
+    margin-inline: 1.5rem;
+}
+
+
+.you-select{
+    color:var(--Orange);
+    background-color: var(--MediumGrey);
+    border-radius: 2rem;
+    padding: .4rem 1rem; 
+}
+
+
+h2{
+    color: var(--White);
+    font-weight:700;
+    font-size: 1.5rem;
+}
+
+
+.thanks{
+    text-align: center;
+    display:grid;
+    gap: .5rem;
+    line-height: 1.5;
+
+}
+
+@media (width <= 530px){
+
+    .how-did-we-do, .thank-you-state{
+        padding: 2rem;
+        border-radius: 1rem;
+        font-size: .8rem; 
+    }
+
+    .button_circles, .circle{
+        width: 2.75rem;
+    }
+}
